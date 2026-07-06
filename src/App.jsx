@@ -281,15 +281,63 @@ export default function App() {
 
                 {/* Link */}
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noreferrer" className="font-mono" style={{ fontSize: 11, color: 'var(--text-ghost)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-cyan)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-ghost)'} aria-label={`Visit ${project.name} live site`}>
-                    <i className="ti ti-external-link" aria-hidden="true" style={{ fontSize: 13 }}></i>
-                    {project.link.replace(/https?:\/\//, '').replace(/\/+$/, '')}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono"
+                    aria-label={`Visit ${project.name} live site`}
+                    style={{
+                      marginTop: 'auto',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: 'var(--accent-cyan)',
+                      textDecoration: 'none',
+                      border: '1px solid rgba(0,217,255,0.3)',
+                      borderRadius: 'var(--radius-pill)',
+                      padding: '5px 12px',
+                      background: 'rgba(0,217,255,0.05)',
+                      transition: 'background 0.2s, border-color 0.2s, transform 0.15s',
+                      alignSelf: 'flex-start',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = 'rgba(0,217,255,0.12)';
+                      e.currentTarget.style.borderColor = 'var(--accent-cyan)';
+                      e.currentTarget.style.transform = 'translateX(2px)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = 'rgba(0,217,255,0.05)';
+                      e.currentTarget.style.borderColor = 'rgba(0,217,255,0.3)';
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
+                    <i className="ti ti-external-link" aria-hidden="true" style={{ fontSize: 12 }}></i>
+                    Visit Site
+                    <span style={{ marginLeft: 2 }}>→</span>
                   </a>
                 )}
                 {project.nda && (
-                  <span className="font-mono" style={{ fontSize: 11, color: 'var(--text-ghost)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                    <i className="ti ti-lock" aria-hidden="true" style={{ fontSize: 13 }}></i>
-                    URL restricted (NDA)
+                  <span
+                    className="font-mono"
+                    style={{
+                      marginTop: 'auto',
+                      alignSelf: 'flex-start',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      fontSize: 11,
+                      color: 'var(--text-dim)',
+                      border: '1px solid var(--border)',
+                      borderRadius: 'var(--radius-pill)',
+                      padding: '5px 12px',
+                      background: 'rgba(255,255,255,0.02)',
+                    }}
+                  >
+                    <i className="ti ti-lock" aria-hidden="true" style={{ fontSize: 12 }}></i>
+                    NDA — URL Restricted
                   </span>
                 )}
               </article>
