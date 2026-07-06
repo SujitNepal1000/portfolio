@@ -17,6 +17,7 @@
     "tsparticles": "^3.0.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.43.0",
     "@tailwindcss/postcss": "^4.1.16",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.21",
